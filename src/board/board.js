@@ -6,6 +6,7 @@ import { MdAdd } from "react-icons/md";
 import BoardList from "../board-list/board-list";
 import BoardListEmpty from "../board-list/board-list-empty";
 import BoardNav from "../board-nav/board-nav";
+import BoardNavTab from "../board-nav-tab/board-nav-tab";
 
 const Board = () => {
   const [list, setList] = useState({
@@ -53,7 +54,8 @@ const Board = () => {
   return (
     <>
       <DragDropContext onDragEnd={handleDragEnd}>
-        <BoardNav  />
+        <BoardNav />
+        <BoardNavTab />
         <Droppable droppableId="board" direction="horizontal" type="COLUMN">
           {(provided, _snapshot) => (
             <div className="board" ref={provided.innerRef}>

@@ -1,0 +1,111 @@
+.board-nav-tab {
+  display: flex;
+  padding: 8px 4px 4px 8px;
+  height: auto;
+  overflow: hidden;
+  flex-wrap: wrap;
+  .nav-icon-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    &.main {
+      //   display: flex;
+      //   flex-grow: 1;
+      //   flex-basis: 100%;
+    }
+    &.end {
+        justify-content: flex-end;
+          display: flex;
+          flex-grow: 1;
+    }
+    .title {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 32px;
+      padding: 0 12px;
+      color: #fff;
+    }
+    hr {
+      float: left;
+      border-left: 1px solid hsla(0, 0%, 100%, 0.24);
+      height: 16px;
+      margin: 8px 8px 12px 4px;
+    }
+    button {
+        &:hover{
+            background-color: hsla(0,0%,100%,.32);
+        }
+      border-radius: 3px;
+      border: 0;
+      text-decoration: none;
+      align-items: center;
+      background-color: #ffffff4d;
+      box-shadow: none;
+      color: #fff;
+      display: flex;
+      font-weight: 700;
+      height: 32px;
+      line-height: 32px;
+      margin: 0 4px 4px 0;
+      padding: 0;
+      white-space: nowrap;
+      cursor: pointer;
+      .svg-icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        &.star {
+          &::before {
+            content: "\002606";
+            font-size: 21px;
+          }
+        }
+        &.public {
+          &::before {
+            content: "\E954";
+            font-size: 21px;
+          }
+        }
+        &.menu {
+          &::before {
+            content: "\E954";
+            font-size: 21px;
+          }
+        }
+        &.org {
+          background-image: url("./30.png");
+          height: 20px;
+          width: 20px;
+          background-size: contain;
+          margin-left: 7px;
+          margin-right: 2px;
+        }
+      }
+      .text {
+        padding: 0 8px 0 2px;
+       
+      }
+    }
+    &.members{
+        .member{
+            height: 28px;
+            width: 28px;
+            margin: 0 0 0 -2px;
+            float: left;
+            z-index: 1;
+            background: #007ac2;
+            border-radius: 50%;
+            color: #fff;
+            font-weight: 500;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .member-count{
+            background-color: hsla(0,0%,100%,.24);
+           
+        }
+    }
+  }
+}

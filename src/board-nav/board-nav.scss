@@ -1,5 +1,16 @@
+nav {
+    
+    display: flex;
+    max-height: 40px;
+    overflow: hidden;
+    padding: 4px;
+    margin: 0 4px;
+  
 div {
   button {
+    &:hover{
+        background-color: hsla(0,0%,100%,.32);
+    }
     border-radius: 3px;
     border: 0;
     text-decoration: none;
@@ -42,17 +53,7 @@ div {
     justify-content: flex-end;
   }
 }
-nav {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  display: flex;
-  max-height: 40px;
-  overflow: hidden;
-  padding: 4px;
-  margin: 0 4px;
-}
+
 div.logo {
   span {
     background-image: url("./header-logo.png");
@@ -148,4 +149,5 @@ div.logo {
       }
     }
   }
+}
 }
