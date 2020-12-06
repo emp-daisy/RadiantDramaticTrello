@@ -2,9 +2,10 @@
   height: 100%;
   display: flex;
   overflow-x: auto;
-  min-height: 100vh;
+  min-height: calc(100vh - 46px);
   background-image: url(./../assets/img/board-bg.jpg);
   background-position: center;
   background-size: cover;
   padding: 8px 4px 4px 8px;
+  padding-top: 42px;
 }

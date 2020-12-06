@@ -5,6 +5,7 @@ import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { MdAdd } from "react-icons/md";
 import BoardList from "../board-list/board-list";
 import BoardListEmpty from "../board-list/board-list-empty";
+import BoardNav from "../board-nav/board-nav";
 
 const Board = () => {
   const [list, setList] = useState({
@@ -50,33 +51,36 @@ const Board = () => {
   };
 
   return (
-    <DragDropContext onDragEnd={handleDragEnd}>
-      <Droppable droppableId="board" direction="horizontal" type="COLUMN">
-        {(provided, _snapshot) => (
-          <div className="board" ref={provided.innerRef}>
-            {Object.keys(list).map((listId, index) => (
-              <div className="board--list-wrapper">
-                <BoardList
-                  id={listId}
-                  key={listId}
-                  data={list[listId]}
-                  index={index}
-                  addCard={addCard}
-                  editTitle={editTitle}
-                  editCard={editCard}
-                />
-              </div>
-            ))}
-            {/* {provided.placeholder} */}
-            <BoardListEmpty
-              isAdding={isAdding}
-              setIsAdding={setIsAdding}
-              addList={addList}
-            />
-          </div>
-        )}
-      </Droppable>
-    </DragDropContext>
+    <>
+      <DragDropContext onDragEnd={handleDragEnd}>
+        <BoardNav  />
+        <Droppable droppableId="board" direction="horizontal" type="COLUMN">
+          {(provided, _snapshot) => (
+            <div className="board" ref={provided.innerRef}>
+              {Object.keys(list).map((listId, index) => (
+                <div className="board--list-wrapper">
+                  <BoardList
+                    id={listId}
+                    key={listId}
+                    data={list[listId]}
+                    index={index}
+                    addCard={addCard}
+                    editTitle={editTitle}
+                    editCard={editCard}
+                  />
+                </div>
+              ))}
+              {/* {provided.placeholder} */}
+              <BoardListEmpty
+                isAdding={isAdding}
+                setIsAdding={setIsAdding}
+                addList={addList}
+              />
+            </div>
+          )}
+        </Droppable>
+      </DragDropContext>
+    </>
   );
 };
 
